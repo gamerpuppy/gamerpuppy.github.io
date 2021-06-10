@@ -1,5 +1,8 @@
 
 
+var generateButton = document.getElementById("generateButton");
+var resultElem = document.getElementById("resultElem");
+
 const seeds = [
     {seed:"4Y8AJFJ9YV", character:"Defect"},
     {seed:"5N6JMG9Q2G", character:"Defect"},
@@ -65,8 +68,17 @@ const seeds = [
     {seed:"DQ7DCU9EE3", character:"Watcher"},
     {seed:"DD0FVGD3I2", character:"Watcher"},
     {seed:"F45D8B7FYK", character:"Watcher"},
-    {seed:"P69Q5MKQTT", character:"Watcher"},
-];
+    {seed:"P69Q5MKQTT", character:"Watcher"},];
 
+function getRandomSeed() {
+    let idx = Math.floor(Math.random() * 10);
+    return seeds[idx];
+}
 
+function generateButtonOnClick() {
+    const seedRes = getRandomSeed();
+    resultElem.innerText = seedRes.seed+" "+seedRes.character+" Boss Relic Swap";
+}
+
+generateButton.onclick = generateButtonOnClick;
 
