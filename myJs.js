@@ -3,7 +3,7 @@
 var generateButton = document.getElementById("generateButton");
 var resultElem = document.getElementById("resultElem");
 
-const seeds = [
+var seeds = [
     {seed:"4Y8AJFJ9YV", character:"Defect"},
     {seed:"5N6JMG9Q2G", character:"Defect"},
     {seed:"A9FDJAYUIY", character:"Defect"},
@@ -71,7 +71,7 @@ const seeds = [
     {seed:"P69Q5MKQTT", character:"Watcher"},];
 
 function getRandomSeed() {
-    let idx = Math.floor(Math.random() * 10);
+    let idx = Math.floor(Math.random() * seeds.length);
     return seeds[idx];
 }
 
