@@ -52,6 +52,8 @@ var seeds = [
     {seed:"2YXFT1DNA9", character:"Defect"},
     {seed:"2YW8E1K967", character:"Defect"},
     {seed:"2ZE2RYLX5E", character:"Defect"},
+    {seed:"PNG0LGYPCC", character:"Defect"},
+    {seed:"TGVNDFMR45", character:"Defect"},
 
     {seed:"19EFVXLRMN", character:"Ironclad"},
     {seed:"19THKQXSTX", character:"Ironclad"},
@@ -68,11 +70,19 @@ var seeds = [
     {seed:"DQ7DCU9EE3", character:"Watcher"},
     {seed:"DD0FVGD3I2", character:"Watcher"},
     {seed:"F45D8B7FYK", character:"Watcher"},
-    {seed:"P69Q5MKQTT", character:"Watcher"},];
+    {seed:"P69Q5MKQTT", character:"Watcher"},
+    {seed:"UPZF9LW0DE", character:"Watcher"},
+];
 
 function getRandomSeed() {
     let idx = Math.floor(Math.random() * seeds.length);
-    return seeds[idx];
+
+    let seed = Object.assign({}, seeds[idx]);
+    if (seed.character === "Defect") {
+        seed.character = Math.random() < 0.5 ? "Defect" : "Silent";
+    }
+
+    return seed;
 }
 
 function generateButtonOnClick() {
